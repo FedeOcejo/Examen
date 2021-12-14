@@ -3,11 +3,6 @@ import sys
 import math
 from random import randint
 
-tablero = [
-['','',''],
-['','',''],       
-['','','']
-]
 
 def bloqueada (fila,columna):
 
@@ -60,9 +55,15 @@ def cambio(fila, columna):
     return fila
 
 while True:
-
 tablero = [
-['','',''],
-['','',''],       
-['','','']
+[' ',' ',' '],
+[' ',' ',' '],       
+[' ',' ',' ']
 ]
+
+x = randint(0,2)
+y = randint(0,2)
+z = randint(0,2)
+a = randint(0,2)
+b = randint(0,2)
+c = randint(0,2)

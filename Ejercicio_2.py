@@ -3,6 +3,9 @@ import sys
 import math
 from random import randint
 
+tablero = []
+for i in range (3):
+    tablero.append ( [' '] * 3)
 
 def bloqueada (fila,columna):
 
@@ -55,10 +58,10 @@ def cambio(fila, columna):
     return fila
 
 while True:
-
-tablero = []
+    tablero = []
 for i in range (3):
     tablero.append ( [' '] * 3)
+
 
 x = randint(0,2)
 y = randint(0,2)
@@ -98,3 +101,34 @@ elif errora == True and errorb == True and errorc == True:
         pass
 else:
         break
+
+turno = randint(0, 1)
+while True:
+    if turno == 1:
+        if errorx == False and errora == False:
+            movimiento(x, 0)
+            x = cambio(x, 0)
+            errora = bloqueada(a, 0)
+        elif errory == False and errorb == False:
+            movimiento(y, 1)
+            y = cambio(y, 1)
+            errorb = bloqueada(b, 1)
+        elif errorz == False and errorc == False:
+            movimiento(z, 2)
+            z = cambio(z, 2)
+            errorc = bloqueada(c, 2)
+        elif errorx == False:
+            movimiento(x, 0)
+            x = cambio(x, 0)
+            errora = bloqueada(a, 0)
+        elif errory == False:
+            movimiento(y, 1)
+            y = cambio(y, 1)
+            errorb = bloqueada(b, 1)
+        elif errorz == False:
+            movimiento(z, 2)
+            z = cambio(z, 2)
+            errorc = bloqueada(c, 2)
+        else:
+            break
+        turno = 0

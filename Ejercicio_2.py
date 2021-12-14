@@ -100,7 +100,7 @@ elif errora == True and errorb == True and errorc == True:
         print("El jugador negro no se puede mover, volvemos a crear el tablero")
         pass
 else:
-        break
+    breakpoint
 
 turno = randint(0, 1)
 while True:
@@ -132,3 +132,36 @@ while True:
         else:
             break
         turno = 0
+    elif turno == 0:
+        if errora == False and errorx == False:
+            movimiento(a, 0)
+            a = cambio(a, 0)
+            errorx = encerrada(x, 0)
+        elif errorb == False and errory == False:
+            movimiento(b, 1)
+            b = cambio(b, 1)
+            errory = encerrada(y, 1)
+        elif errorc == False and errorz == False:
+            movimiento(c, 2)
+            c = cambio(c, 2)
+            errorz = encerrada(z, 2)
+        elif errora == False:
+            movimiento(a, 0)
+            a = cambio(a, 0)
+            errorx = encerrada(x, 0)
+        elif errorb == False:
+            movimiento(b, 1)
+            b = cambio(b, 1)
+            errory = encerrada(y, 1)
+        elif errorc == False:
+            movimiento(c, 2)
+            c = cambio(c, 2)
+            errorc = encerrada(z, 2)
+        else:
+            break
+        turno = 1
+    printeartablero(tableroajedrez)
+if errorx == True and errory == True and errorz == True:
+    print("El jugador blanco no se puede mover, ha ganado el jugador negro")
+elif errora == True and errorb == True and errorc == True:
+    print("El jugador negro no se puede mover, ha ganado el jugador blanco")

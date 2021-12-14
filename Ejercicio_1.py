@@ -1,4 +1,4 @@
 def minion_game(string):
-while 
+while ana == 1:
 for
 if __name__ == '__main__':
